@@ -1,0 +1,223 @@
+/* Variables */
+:root {
+  --primary: ;
+  --secondary: ;
+  --accent: ;
+  --textLight: ;
+  --textDark: ;
+  --background: ;
+}
+
+/* Meyers CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom Resets */
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+input, textarea, button {
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+/* General */
+html {
+    font-size: 16px;
+}
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  color: var(--textLight);
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    /* border: 1px solid black; */
+    margin-top: 2rem;
+    box-shadow: 0 10px 20px -5px rgb(0 0 0 / 50%);
+  }
+
+/* Title */
+
+h1 {
+    font-size: 3rem;
+    background-color: #e1fff6;
+    padding: 1rem 1rem;
+}
+span {
+    font-size: 2rem;
+    
+}
+button {
+    background-color: red;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.result {
+    font-size: 2rem;
+    background-color: #e1fff6;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+}
+.user-icons, .computer-icons {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.computer, .user {
+    margin-top: 2rem;
+}
+i {
+    color: black;
+}
+.selected {
+    background-color: #e1fff6;
+    padding: 0.5rem 0.5rem;
+}
+
