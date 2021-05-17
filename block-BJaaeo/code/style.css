@@ -145,17 +145,19 @@ table {
   box-sizing: border-box;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-input, textarea, button {
-    outline: 0;
-    border: 0;
-    box-shadow: none;
+input,
+textarea,
+button {
+  outline: 0;
+  border: 0;
+  box-shadow: none;
 }
 
 /* General */
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 body {
   font-size: 1rem;
@@ -166,10 +168,74 @@ body {
 
 /* Container */
 .container {
-  max-width: 1380px;
+  max-width: 650px;
   margin: 0 auto;
   width: 100%;
   padding: 0 2rem;
 }
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem 1rem;
+}
+button {
+  width: 8rem;
+  height: 4rem;
+  border-radius: 10px;
+  margin: 0.5rem 0.5rem;
+}
 
-
+.display {
+  text-align: right;
+  background-color: black;
+  padding: 1.5rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 2.5rem;
+}
+.operators {
+  display: flex;
+  justify-content: space-between;
+}
+.multiply,
+.divide,
+.minus,
+.plus {
+  background-color: maroon;
+  color: white;
+  font-size: 2.5rem;
+}
+.multiply {
+  padding-top: 1rem;
+}
+.minus {
+  padding-bottom: 0.6rem;
+}
+.numbers-and-equal {
+  display: flex;
+}
+.equal {
+  height: 19rem;
+  background-color: rgb(43, 226, 186);
+  color: white;
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.clear,
+.dot,
+.zero,
+.equal {
+  font-size: 2.5rem;
+}
+.clear {
+  background-color: rgb(6, 10, 6);
+  color: white;
+}
