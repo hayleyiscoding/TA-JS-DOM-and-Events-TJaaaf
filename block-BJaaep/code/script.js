@@ -1,19 +1,19 @@
-let rootElement = document.querySelector("ul");
-let allBoxes = document.querySelectorAll("box");
+let firstBoxes = document.querySelectorAll('.first li');
+let secondBox = document.querySelector('.second')
 
-function createUserLayout() {
-    for(let i = 0; i <= 12; i++) {
-        let li = document.createElement('li');
-        li.classList.add('box');
-        li.innerText = [i];
-        li.append(ul);
-    }
-}
-
-allBoxes.forEach((box) => {
-    rootElement.addEventListener('click', handleBtnClick);
-    
+firstBoxes.forEach((box, index) => {
+    box.addEventListener("click", (event) => {
+        event.target.innerText = index + 1;
+        setTimeout(() => {
+            event.target.innerText = "";
+        }, 5000);
+    });
 });
 
-
-
+secondBox.addEventListener("click", (event) => {
+    let text = event.target.dataset.text;
+    event.target.innerText = text;
+    setTimeout(() => {
+        event.target.innerText = "";
+    }, 5000);
+});
