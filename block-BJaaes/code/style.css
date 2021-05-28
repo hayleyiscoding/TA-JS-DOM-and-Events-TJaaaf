@@ -51,12 +51,12 @@ input, textarea, button {
 
 .container {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 1rem auto;
   width: 100%;
   padding: 0 2rem;
   text-align: left;
   border: 1px solid black;
-  background-color: #e1fff6;
+  background-color:white;
   padding-top: 0.4rem;
 }
 body {
@@ -69,10 +69,10 @@ input {
   width: 380px;
   text-align: left;
   padding: 1rem 0.6rem;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
 }
 .form-control {
-  padding: 0.7rem 0;
+  padding: 0.4rem 0;
 }
 
 ::placeholder {
@@ -93,19 +93,19 @@ button {
   margin: 1rem 0;
   cursor: pointer;
 }
-
 small {
   font-size: 0.8rem;
   color: red;
   padding-top: 0.1rem;
   display: block;
 }
-
-/* .error {
-  display: block;
+.error {
+  border: 2px solid red;
 }
 .success{
-  display: none;
-} */
-
+  border: 2px solid green;
+}
+button:hover {
+  background-color: grey;
+}
 

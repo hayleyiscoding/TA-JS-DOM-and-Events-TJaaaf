@@ -1,111 +1,109 @@
 let form = document.querySelector("form");
-// let parentElm = nameElm.parentElement
-let nameError = "";
 
-function cantBeANumber(str) {
-  return str.split("").some((e) => Number(e));
+let userInfo = {};
+let errorMessages = {};
+
+function displayError(name) {
+  let elm = form.elements[name];
+  elm.nextElementSibling.innerText = errorMessages[name];
+  elm.classList.add("error");
+}
+
+function displaySuccess(name) {
+  let elm = form.elements[name];
+  elm.nextElementSibling.innerText = "";
+  errorMessages[name] = "";
+  elm.classList.remove("error");
+  elm.classList.add("success");
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  let nameElm = event.target.elements.name;
-  let emailElm = event.target.elements.email;
-  let phoneNumberElm = event.target.elements.phoneNumber;
-  let usernameElm = event.target.elements.username;
-  let passwordElm = event.target.elements.password;
-  let confirmPasswordElm = event.target.elements.confirmPassword;
+  let elements = event.target.elements;
 
-  if (nameElm.value.trim() === "") {
-    nameError = "* This field can't be empty";
-    // parentElm.classList.add("error");
-  } else if (cantBeANumber(nameElm.value)) {
-    userNameError = "You can't use numbers in the name field";
-    //   parentElm.classList.add("error");
+  const name = elements.name.value;
+  const email = elements.email.value;
+  const phone = elements.phone.value;
+  const username = elements.username.value;
+  const password = elements.password.value;
+  const passwordCheck = elements.passwordCheck.value;
+
+//1. Username can't be less than 4 characters
+  if (username.length <= 4 && username !== "") {
+    errorMessages.username = "* Username can't be less than 4 characters";
+    displayError('username');
+  } else if (username.trim() === "") {
+    errorMessages.username = "* This field can't be empty";
+    displayError('username');
   } else {
-    nameError = "";
-    // parentElm.classList.add("success");
-    // parentElm.classList.remove("error");
+    displaySuccess('username');
   }
 
-  if (emailElm.value.trim() === "") {
-    nameError = "* This field can't be empty";
-    // parentElm.classList.add("error");
-  } else if (usernameElm.value.length < 6) {
-    nameError = "* Email can't be less than 6 characters";
-    // parentElm.classList.add("error");
+// 2. Name can't be numbers
+  if (!isNaN(name) && name !== "") {
+    errorMessages.name = `* Name can't be numbers`;
+    displayError('name');
+  } else if (name.trim() === "") {
+    errorMessages.name = "* This field can't be empty";
+    displayError('name');
   } else {
-    nameError = "";
-    // parentElm.classList.add("success");
-    // parentElm.classList.remove("error");
+    displaySuccess('name');
   }
 
-  if (phoneNumberElm.value.trim() === "") {
-    nameError = "* This field can't be empty";
-    // parentElm.classList.add("error");
-  } else if (phoneNumberElm.value.length < 7) {
-    nameError = "* Phone Number can't be less than 7 characters";
-    // parentElm.classList.add("error");
+// 3. Email must contain the symbol `@`
+// 4. Email must be at least 6 characters
+
+  if (!email.includes('@') && email !== "") {
+    errorMessages.email = "* Not a valid email address";
+    displayError('email');
+  } else if (email.length <= 6 && email !== "") {
+    errorMessages.email = "* Email must be at least 6 characters";
+    displayError('email');
+  } else if (email.trim() === "") {
+    errorMessages.email = "* This field can't be empty";
+    displayError('email');
   } else {
-    nameError = "";
-    // parentElm.classList.add("success");
-    // parentElm.classList.remove("error");
+    displaySuccess('email');
   }
 
-  if (usernameElm.value.trim() === "") {
-    nameError = "* This field can't be empty";
-    // parentElm.classList.add("error");
-  } else if (usernameElm.value.length < 4) {
-    nameError = "* Username can't be less than 4 characters";
-    //     // parentElm.classList.add("error");
+// 5. Phone numbers can only be a number
+// 6. Length of phone number can't be less than 7
+
+  if (isNaN(phone) && phone !== "") {
+    errorMessages.phone = "* Phone numbers can only be a number";
+    displayError('phone');
+  } else if (phone.length < 7 && phone !== "") {
+    errorMessages.phone = "* Length of phone number can't be less than 7";
+    displayError('phone');
+  } else if (phone.trim() === "") {
+    errorMessages.phone = "* This field can't be empty";
+    displayError('phone');
   } else {
-    nameError = "";
-    // parentElm.classList.add("success");
-    // parentElm.classList.remove("error");
+    displaySuccess('phone');
   }
 
-  if (passwordElm.value.trim() === "") {
-    nameError = "* This field can't be empty";
-    // parentElm.classList.add("error");
-  } else {
-    nameError = "";
-    // parentElm.classList.add("success");
-    // parentElm.classList.remove("error");
-  }
+// 8. Password and confirm password must be same.
 
-  if (confirmPasswordElm.value.trim() === "") {
-    nameError = "* This field can't be empty";
-    // parentElm.classList.add("error");
+  if (password !== passwordCheck) {
+    errorMessages.password = "* Both passwords need to be the same";
+    errorMessages.passwordCheck = "* Both passwords need to be the same";
+    displayError('password');
+    displayError('passwordCheck');
+  } else if (password === "" || passwordCheck === "") {
+    errorMessages.password = "* This field can't be empty";
+    errorMessages.passwordCheck = "* This field can't be empty";
+    displayError('password');
+    displayError("passwordCheck");
   } else {
-    nameError = "";
-    // parentElm.classList.add("success");
-    // parentElm.classList.remove("error");
+    displaySuccess('password');
+    displaySuccess('passwordCheck');
   }
+  // Once the form is valid it should alert `User Added Successfully!`
 
-  nameElm.nextElementSibling.innerText = nameError;
-  emailElm.nextElementSibling.innerText = nameError;
-  phoneNumberElm.nextElementSibling.innerText = nameError;
-  usernameElm.nextElementSibling.innerText = nameError;
-  passwordElm.nextElementSibling.innerText = nameError;
-  confirmPassword.nextElementSibling.innerText = nameError;
+  if (Object.values(errorMessages).filter(Boolean).length === 0) {
+    alert('User Added Successfully!')
+  }
 }
 
 form.addEventListener("submit", handleSubmit);
 
-// parentElm.classList.add("error");
-//   } else if (nameElm.value.length < 4) {
-//     nameError = "Username can't be less than 4 characters";
-//     // parentElm.classList.add("error");
-// parentElm.classList.add("success");
-// parentElm.classList.remove("error");
-// if (usernameElvalue === "") {
-//     usernameError = "Can't be empty";
-// } else if (elements.name.pattern.value !== [^0-9]) {
-//     userNameError = "You can't use numbers in the name field";
-// }
-
-// if (elements.email.value === "") {
-//     usernameError = "Can't be empty";
-// } else if (elements.email.value ) {
-//     userNameError = "You can't use numbers in the name field";
-// }
-// let parentElm = nameElm.parentElement
