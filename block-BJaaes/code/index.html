@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Form Validation 👇</title>
+  </head>
+  <body>
+    <div>
+      <form action="" class="container">
+        <div class="form-control">
+          <label for="name">Name</label>
+          <br>
+          <input 
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Add your name here"
+          />
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="email">Email Address</label>
+          <br>
+          <input 
+          id="email"
+          type="text"
+          name="email"
+          placeholder="Arya@Stark.com"
+          />
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="phone">Phone Number</label>
+          <br>
+          <input 
+          id="phone"
+          type="tel"
+          name="phone"
+          placeholder="Add your phone number here"
+          />
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="username">Username</label>
+          <br>
+          <input 
+          id="username"
+          type="text"
+          name="username"
+          placeholder="Add your username here"
+          />
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <br>
+          <input 
+          id="password"
+          type="password"
+          name="password"
+          placeholder="Add your password here"
+          />
+          <small></small>
+        </div>
+        <div class="form-control">
+          <label for="pass-check">Confirm Password</label>
+          <br>
+          <input 
+          id="pass-check"
+          type="password"
+          name="passwordCheck"
+          placeholder="Add your password again here"
+          />
+          <small></small>
+        </div>
+        <div class="button-container">
+          <button>Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
+<!-- Username can't be less than 4 characters
+Name can't be numbers
+Email must contain the symbol @
+Email must be at least 6 characters
+Phone numbers can only be a number
+Length of phone number can't be less than 7
+Password must contain a number and a symbol
+Password and confirm password must be same.
+None of the field can be blank <!-- pattern="[^0-9]" -->
