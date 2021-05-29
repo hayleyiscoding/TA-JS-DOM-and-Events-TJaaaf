@@ -1,40 +1,66 @@
-let form = document.querySelector("form");
+let input = document.querySelector(`input[type="text"]`);
+let rootElm = document.querySelector(".movies-list");
 
-let userInput = [];
+// console.log(input);
 
-function createLayout() {
-  form.innerHTML = "";
-  userInput.forEach((movie) => {
-    let div = form.createElement("div");
-    div.classList.add("form-control");
-    let divCheckBox = form.createElement('div"');
-    let input = form.createElement("input");
+let allMovies = [
+  {
+    name: "Forrest Gump",
+    watched: false,
+  },
+];
+
+input.addEventListener("keyup", (event) => {
+//   console.log(event.keyCode);
+  if (event.keyCode == 13) {
+    allMovies.push({
+      name: event.target.value,
+      watched: false,
+    });
+    event.target.value = "";
+    createMovieUI();
+  }
+});
+
+function deleteMovie(event) {
+    let id = event.target.dataset.id;
+    allMovies.splice(id, 1);
+    createMovieUI();
+}
+
+// function deleteMovie(event) {
+//     event.target.parentElement.remove();
+// }
+// The above is not the best way, rather do the way that is not commented out
+
+function handleChange(event) {
+    // console.log(event.target);
+    let id = event.target.id;
+    // console.log(id);
+    allMovies[id].watched = !allMovies[id].watched;
+}
+
+function createMovieUI() {
+  rootElm.innerHTML = "";
+  allMovies.forEach((movie, i) => {
+    let li = document.createElement("li");
+    li.classList.add("flex");
+    let input = document.createElement("input");
+    input.classList.add("checkbox");
     input.type = "checkbox";
-    input.name = userInput.movie;
-    input.id = userInput.movie;
-    let label = form.createElement("label");
-    label.for = userInput.movie;
-    label.innerText = userInput.movie;
-    let divDelete = form.createElement("div");
-    divDelete.classList.add("delete");
-    divDelete.innerText("❌");
-    div.append(divCheckbox, divDelete);
-    divCheckBox.append(input, label);
+    input.id = i;
+    input.checked = movie.watched;
+    input.addEventListener('click', handleChange); // this line goes along with function above
+    let p = document.createElement("p");
+    p.for = i;
+    p.innerText = movie.name;
+    let span = document.createElement("span");
+    span.innerText = "❌";
+    span.addEventListener('click', deleteMovie) // this line goes along with function above
+    span.setAttribute("data-id", i);
+    // console.log(li);
+    li.append(input, p, span);
+    // console.log(li);
+    rootElm.append(li);
   });
 }
-
-function handleSubmit(event) {
-    event.preventDefault();
-    userInput.movie = event.target.value;
-    createLayout();
-}
-
-form.addEventListener("submit", handleSubmit);
-
-{/* <div class="form-control flex">
-  <div>
-    <input type="checkbox" name="forrestGump" id="forrestGump" />
-    <label for="forrestGump">Forrest Gump</label>
-  </div>
-  <div class="delete">❌</div>
-</div>; */}

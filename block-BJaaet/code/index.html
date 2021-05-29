@@ -10,7 +10,6 @@
     <main>
       <div class="container">
         <h1>Movie Watch List</h1>
-        <form action="">
           <div class="form-control">
             <input
               id="movie"
@@ -19,36 +18,13 @@
               placeholder="Enter the movie name!"
             />
           </div>
-          <div class="form-control flex">
-            <div>
-              <input type="checkbox" name="forrestGump" id="forrestGump" />
-              <label for="forrestGump">Forrest Gump</label>
-            </div>
-            <div class="delete">❌</div>
-          </div>
-          <div class="form-control flex">
-            <div>
-              <input type="checkbox" name="inception" id="inception" />
-              <label for="inception">Inception</label>
-            </div>
-            <div class="delete">❌</div>
-          </div>
-
-          <div class="form-control flex">
-            <div>
-              <input type="checkbox" name="titanic" id="titanic" />
-              <label for="titanic">Titanic</label>
-            </div>
-            <div class="delete">❌</div>
-          </div>
-          <div class="form-control flex">
-            <div>
-              <input type="checkbox" name="wallflower" id="wallflower" />
-              <label for="wallflower">The Perks Of Being a Wallflower</label>
-            </div>
-            <div class="delete">❌</div>
-          </div>
-        </form>
+          <ul class="movies-list">
+            <li class="form-control flex">
+                <input type="checkbox" name="forrestGump" id="forrestGump" />
+                <label for="forrestGump">Forrest Gump</label>
+                <span>❌</span>
+            </li>
+          </ul>
       </div>
     </main>
     <script src="./script.js"></script>
