@@ -161,13 +161,13 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   font-family: "Open Sans", sans-serif;
-  background-color: yellow;
+  background-color: white;
 }
 
 /* Container */
 .container {
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 5rem auto;
   width: 100%;
   padding: 0 2rem;
   background-color: lightskyblue;
@@ -178,164 +178,8 @@ body {
 .flex {
   display: flex;
 }
-.column {
-    flex-direction: column;
-}
-.wrap {
-    flex-wrap: wrap;
-}
-.center {
-    justify-content: center;
-    align-items: center;
-}
-.justify-start {
-    justify-content: flex-start;
-}
-.justify-between {
-    justify-content: space-between;
-}
-.justify-end {
-    justify-content: flex-end;
-}
-.align-start {
-    align-items: flex-start;
-}
-.align-center {
-    align-items: center;
-}
-.align-end {
-    align-items: flex-end;
-}
 
-/* Columns */
-.flex-15 {
-    flex: 0 1 15%;
-}
-.flex-20 {
-    flex: 0 1 20%;
-}
-.flex-25 {
-    flex: 0 1 25%;
-}
-.flex-30 {
-    flex: 0 1 30%;
-}
-.flex-40 {
-    flex: 0 1 40%;
-}
-.flex-48 {
-    flex: 0 1 48%;
-}
-.flex-50 {
-    flex: 0 1 50%;
-}
-.flex-60 {
-    flex: 0 1 60%;
-}
-.grow {
-    flex: 1 1 auto;
-}
-
-/* Padding */
-.padding {
-  padding: 5rem 0;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  letter-spacing: 0.8px;
-  cursor: pointer;
-  background-color: var(--accent);
-  color: #ffffff;
-  transition: all 200ms ease-in-out;
-  font-size: 1.3rem;
-  border-radius: 4px;
-  font-weight: 600;
-  margin-top: 2rem;
-}
-.btn-primary {
-  border: 1px solid black;
-}
-.btn:hover {
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    opacity: 0.8;
-    color: #ffffff!important;
-}
-.btn-primary:hover {
-    background-color: var(--secondary);
-}
-
-/* Active Link */
-.active {
-    color: var(--primary);
-}
-
-/* Nav and General Links Hover */
-a:hover {
-    color: var(--primary);
-}
-
-/* Full Width */
-.width-full {
-    width: 100%;
-}
-
-/* Headings*/
-.heading {
-  font-size: 3rem;
-  color: var(--textDark);
-  margin-bottom: 2rem;
-  font-weight: 900;
-  text-transform: capitalize;
-}
-.heading-secondary {
-    font-size: 2.2rem;
-}
-
-/* Text */
-.text-center {
-    text-align: center;
-}
-.text-right {
-    text-align: right;
-}
-.text-accent {
-    color: var(--accent);
-}
-.uppercase {
-    text-transform: uppercase;
-}
-.font-0 {
-    font-size: 0;
-}
-
-/* Clearfix */
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
-}
-.clearfix::after {
-  clear: both;
-}
-
-/* 
-1)Common Tags that I forget:
-<nav>
-<fieldset>
-<figure>
-<article>
-<aside>
-
-2) Use max-width, max-height for images and tables
-
-3) Add viewport meta tag to HTML
-
-4) Code in 'rem'
- */
-
+/* General */
 h1 {
     color: black;
     font-size: 2rem;
@@ -350,19 +194,26 @@ h1 {
 #movie::placeholder {
     font-size: 1rem;
 }
-label {
+p, label {
     font-size: 1rem;
+    margin-left: 1.5rem;
 }
 .form-control {
-    margin:0.5rem;
+    margin: 1rem;
     border-bottom: 1px white dashed;
 }
 #wallflower {
     margin-bottom: 2rem;
 }
-
-.delete {
+span {
     margin-left: 3rem;
+    cursor: pointer;
+}
+.movies-list {
+   padding-bottom: 1rem;
+}
+li {
+    padding-bottom: 0.75rem;
 }
 
 
