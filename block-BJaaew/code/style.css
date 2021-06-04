@@ -32,7 +32,8 @@ h2 {
 h1 {
   color: white;
   margin: 0;
-  padding: 1rem 1rem;
+  padding: 2rem 1rem;
+  font-size: 4rem;
 }
 h2 {
   font-size: 1.3rem;
@@ -83,18 +84,18 @@ a {
   justify-content: center;
   flex-wrap: wrap;
 }
-.filter-by-house li {
-  margin: 1.5rem 1rem;
-}
 
-.filter-by-house li a {
+.filter-by-house li {
+  margin: 0.6rem 1rem;
   color: white;
   background-color: black;
   border-radius: 10px;
   border: 1px solid transparent;
+  padding: 1rem 2rem;
+  cursor: pointer;
 }
 
-.filter-by-house li a:hover {
+.filter-by-house li:hover {
   color: black;
   background-color: white;
   border: 1px solid black;
@@ -104,8 +105,15 @@ a {
   width: 20rem;
   margin: 0 auto;
   margin-bottom: 2rem;
+  padding: 1rem;
 }
 
 input[type="text"]::placeholder {
-  text-align: center;
+  text-align: left;
+}
+
+.active {
+  color: black !important;
+  background-color: white !important;
+  border: 1px solid black !important;
 }
