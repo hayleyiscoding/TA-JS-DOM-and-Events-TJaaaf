@@ -32,7 +32,7 @@ function createUI(arr = allTodos) {
     input.type = "checkbox";
     input.classList.add("task");
     input.checked = todo.isDone;
-    input.addEventListener("change", handleChange);
+    input.addEventListener("click", handleChange);
     input.setAttribute("data-id", i);
     let span1 = document.createElement("span");
     span1.classList.add("checkmark");
@@ -49,6 +49,10 @@ function createUI(arr = allTodos) {
   });
   let itemsLeft = allTodos.filter((todo) => !todo.isDone).length;
   count.innerText = `${itemsLeft} ${itemsLeft > 1 ? "items" : "item"} left`;
+//   if (allTodos.filter(todo => todo.isDone === true).length > 0){
+//     clearCompleted.style.display = "block";
+//     console.log(allTodos.filter(todo => todo.isDone === true));
+// }
 }
 
 function handleInput(event) {
@@ -74,11 +78,8 @@ function handleDelete(event) {
 
 function handleChange(event) {
   let id = event.target.dataset.id;
-  console.log(id);
   allTodos[id].isDone = !allTodos[id].isDone;
   createUI();
-  clearCompleted.style.display = "none";
-    
   localStorage.setItem("todos", JSON.stringify(allTodos));
 }
 
@@ -107,24 +108,21 @@ function handleCompleted(event) {
     completed.classList.add("selected");
 }
 
-function showClearCompletedButton() {
-    allTodos.some(todo => {
-        if (todo.isDone === true) {
-            return clearCompleted.style.display = "block";
-        }
-    });
-}
-
-function handleClearCompleted(event) {
-    let completedTasks = allTodos.filter(todo => todo.isDone);
-    completedTasks.length = 0;
-}
+// function handleClearCompleted(event) {
+//    allTodos = allTodos.filter(todo => !todo.isDone);
+//    createUI();
+// };
 
 inputText.addEventListener("keyup", handleInput);
 active.addEventListener("click", handleActive);
 all.addEventListener("click", handleAll);
 completed.addEventListener("click", handleCompleted);
-clearCompleted.addEventListener("click", handleClerCompleted);
+clearCompleted.addEventListener("click", () => {
+    allTodos = allTodos.filter(todo => !todo.isDone);
+   createUI();
+});
+
+
 createUI();
 
 //}
