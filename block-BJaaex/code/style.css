@@ -166,10 +166,11 @@ body {
 
 /* Container */
 .container {
-  max-width: 1380px;
+  max-width: 1000px;
   margin: 0 auto;
   width: 100%;
   padding: 0 2rem;
+  background-color:white;
 }
 
 /* Flex  */
@@ -194,6 +195,9 @@ body {
 }
 .justify-end {
     justify-content: flex-end;
+}
+.justify-evenly {
+    justify-content: space-evenly;
 }
 .align-start {
     align-items: flex-start;
@@ -240,30 +244,7 @@ body {
 }
 
 /* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  letter-spacing: 0.8px;
-  cursor: pointer;
-  background-color: var(--accent);
-  color: #ffffff;
-  transition: all 200ms ease-in-out;
-  font-size: 1.3rem;
-  border-radius: 4px;
-  font-weight: 600;
-  margin-top: 2rem;
-}
-.btn-primary {
-  border: 1px solid black;
-}
-.btn:hover {
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    opacity: 0.8;
-    color: #ffffff!important;
-}
-.btn-primary:hover {
-    background-color: var(--secondary);
-}
+
 
 /* Active Link */
 .active {
@@ -281,15 +262,15 @@ a:hover {
 }
 
 /* Headings*/
-.heading {
-  font-size: 3rem;
-  color: var(--textDark);
-  margin-bottom: 2rem;
-  font-weight: 900;
-  text-transform: capitalize;
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    padding: 2rem 0;
 }
-.heading-secondary {
-    font-size: 2.2rem;
+h2 {
+    font-size: 2rem;
+    padding: 1rem 0;
 }
 
 /* Text */
@@ -319,17 +300,47 @@ a:hover {
   clear: both;
 }
 
-/* 
-1)Common Tags that I forget:
-<nav>
-<fieldset>
-<figure>
-<article>
-<aside>
+/* Cards */
 
-2) Use max-width, max-height for images and tables
+ul{
+    background-color:blue;
+    padding: 1rem 1.5rem;
+    margin-bottom: 5rem;
+}
 
-3) Add viewport meta tag to HTML
+.cards li i {
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    font-size: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-4) Code in 'rem'
- */
+}
+
+.fas {
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.cards li {
+    margin: 1rem 0.2rem;
+    border: 1px solid white;
+}
+
+.open {
+   opacity: 1;
+   background-color: yellow;
+   margin: 0;
+}
+
+.closed {
+    opacity: 0;
+    background-color: blue;
+}
+
+.match {
+    background-color: gray;
+  }
