@@ -39,7 +39,7 @@ body {
 
 .front {
   z-index: 2;
-  background: blue url('../assets/question.gif') no-repeat center center / contain;
+  background: blue url('./assets/question.gif') no-repeat center center / contain;
 }
 
 .back {
@@ -55,5 +55,25 @@ body {
 }
 
 .match .front {
-  background: #6589F9 !important;
+  background:red !important;
+}
+
+h1 {
+  color: black;
+  font-size: 3rem;
+  text-align: center;
+}
+
+h2 {
+  margin-left: 2rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer {
+  color: black;
 }
