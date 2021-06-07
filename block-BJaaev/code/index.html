@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/f1a9dfe756.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <title>TODO Application</title>
+  </head>
+  <body>
+    <section class="todoapp">
+      <header style="display:block">
+        <h1>todos</h1>
+        <input
+          type="text"
+          class="new-todo"
+          placeholder="What needs to be done?"
+          autofocus=""
+        />
+      </header>
+      <section class="main" style="display:block">
+        <input id="toggle-all" class="toggle-all" type="text" />
+        <label></label>
+        <ul class="tasks"></ul>
+      </section>
+      <footer class="footer justify-between" style="display: flex">
+        <span class="todo-count"><strong>1</strong> item left</span>
+        <ul class="filters" style="display: block">
+          <li>
+            <a href="" class="selected all">All</a>
+          </li>
+          <li>
+            <a href="" class='active'>Active</a>
+          </li>
+          <li>
+            <a href="" class="completed">Completed</a>
+          </li>
+        </ul>
+        <a class="clear-completed none">Clear completed</a>
+      </footer>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>

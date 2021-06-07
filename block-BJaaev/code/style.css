@@ -1,0 +1,580 @@
+/* Variables */
+:root {
+  --primary: ;
+  --secondary: ;
+  --accent: ;
+  --textLight: ;
+  --textDark: ;
+  --background: ;
+}
+
+/* Meyers CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Custom Resets */
+*,
+* ::before,
+* ::after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+input,
+textarea,
+button {
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+/* General */
+html {
+  font-size: 14px;
+}
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* Flex  */
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-center {
+  align-items: center;
+}
+.align-end {
+  align-items: flex-end;
+}
+
+/* Columns */
+.flex-15 {
+  flex: 0 1 15%;
+}
+.flex-20 {
+  flex: 0 1 20%;
+}
+.flex-25 {
+  flex: 0 1 25%;
+}
+.flex-30 {
+  flex: 0 1 30%;
+}
+.flex-40 {
+  flex: 0 1 40%;
+}
+.flex-48 {
+  flex: 0 1 48%;
+}
+.flex-50 {
+  flex: 0 1 50%;
+}
+.flex-60 {
+  flex: 0 1 60%;
+}
+.grow {
+  flex: 1 1 auto;
+}
+
+/* Padding */
+.padding {
+  padding: 5rem 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  background-color: var(--accent);
+  color: #ffffff;
+  transition: all 200ms ease-in-out;
+  font-size: 1.3rem;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.btn-primary {
+  border: 1px solid black;
+}
+.btn:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+  color: #ffffff !important;
+}
+.btn-primary:hover {
+  background-color: var(--secondary);
+}
+
+/* Active Link */
+.active {
+  color: var(--primary);
+}
+
+/* Nav and General Links Hover */
+a:hover {
+  color: var(--primary);
+}
+
+/* Full Width */
+.width-full {
+  width: 100%;
+}
+
+/* Headings*/
+.heading {
+  font-size: 3rem;
+  color: var(--textDark);
+  margin-bottom: 2rem;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+.heading-secondary {
+  font-size: 2.2rem;
+}
+
+/* Text */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-accent {
+  color: var(--accent);
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.font-0 {
+  font-size: 0;
+}
+
+/* Clearfix */
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+
+/* 
+1)Common Tags that I forget:
+<nav>
+<fieldset>
+<figure>
+<article>
+<aside>
+
+2) Use max-width, max-height for images and tables
+
+3) Add viewport meta tag to HTML
+
+4) Code in 'rem'
+ */
+
+/* h1 {
+  color: #ead7d8;
+  text-align: center;
+  font-size: 5rem;
+}
+input {
+    height: 5rem;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #999;
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03)
+} */
+input::placeholder {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 100;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* input[type="text"] {
+    font-weight: 100;
+} */
+
+.todoapp {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  margin: 11rem auto 2.5rem auto;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+.todoapp h1 {
+  position: absolute;
+  top: -155px;
+  width: 100%;
+  font-size: 8rem;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.15);
+}
+.new-todo {
+  padding: 16px 16px 16px 60px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 100;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+span,
+.filters {
+  font-weight: 100;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+.toggle-all + label:before {
+  content: "❯";
+  font-size: 1.4rem;
+  color: #e6e6e6;
+  padding: 10px 27px 10px 27px;
+}
+.toggle-all + label {
+  width: 60px;
+  height: 34px;
+  font-size: 0;
+  position: absolute;
+  top: -52px;
+  left: -5px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.toggle-all {
+  width: 1px;
+  height: 1px;
+  border: none;
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+  bottom: 100%;
+}
+.main {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid #e6e6e6;
+}
+.todo-count {
+  /* float: left; */
+  text-align: left;
+  margin-left: 1rem;
+}
+.filters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  color: #777;
+  cursor: pointer;
+}
+/* .footer:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 8px 0 -3px #f6f6f6,
+    0 9px 1px -3px rgb(0 0 0 / 20%), 0 16px 0 -6px #f6f6f6,
+    0 17px 2px -6px rgb(0 0 0 / 20%);
+} */
+.footer {
+  text-align: center;
+  height: 3rem;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 0.7rem;
+  display: flex;
+}
+.filters li {
+  display: inline;
+}
+.filters li a {
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.filters li a.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+.task-text {
+  font-size: 1.5rem;
+  font-weight: 100;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  justify-content: space-between;
+}
+p {
+  padding-left: 5rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.label {
+  position: relative;
+  justify-content: space-between;
+}
+
+.label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  left: 2rem;
+  top: 1.1rem;
+}
+
+.label .checkmark {
+  position: absolute;
+  left: 2rem;
+  top: 1.1rem;
+  border: 1px solid gray;
+  border-radius: 50px;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.label .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: 1.1rem;
+  height: 0px;
+  width: 0px;
+  border-radius: 50px;
+  opacity: 1;
+}
+
+.label input[type="checkbox"]:checked ~ .checkmark {
+  opacity: 1;
+  border: 1px solid gray;
+  border-radius: 50px;
+  left: 2rem;
+  top: 1.1rem;
+  background-color: rgba(175, 47, 47, 0.15);
+  /* background: url("./assets/tick.png") no-repeat;  */
+}
+
+.label input[type="checkbox"]:checked ~ p {
+  text-decoration: line-through;
+  color: #d9d9d9;
+}
+
+label input[type="checkbox"]:checked ~ .checkmark::after {
+  opacity: 1;
+  left: 2rem;
+  top: 1.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+}
+
+.delete {
+  height: 4rem;
+  width: 4rem;
+  display: block;
+  font-size: 2rem;
+  padding-top: 0.3rem;
+  text-align: center;
+  color: gray;
+  cursor: pointer;
+}
+
+.clear-completed {
+  text-align: right;
+  margin-right: 1rem;
+  margin-top: 0rem;
+  background-color: white;
+  font-size: 1.1rem;
+  font-weight: 100;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #777;
+  letter-spacing: 1px;
+ display: block;
+}
+
+.clear-completed:hover {
+    text-decoration: underline;
+}
+
+/* .none {
+    display: none;
+} */
