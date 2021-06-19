@@ -3,10 +3,775 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chrome Extension</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Custom Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="shape.css"/> -->
+    <title>Online CoWork</title>
   </head>
   <body>
+    <!-- Announcements Bar -->
+    <section>
+      <div class="container announcements flex center">
+        NEW WEBSITE POST: Digital Planners by Ralu from Romania. Click here to
+        read or add yours.
+      </div>
+    </section>
+    <!-- 2 Columns -->
+    <section class="flex container justify-evenly">
+      <main class="flex-50">
+        <!-- Logo -->
+        <section>
+          <header>
+            <div class="flex center">
+              <img
+                class="logo"
+                src="./assets/online_cowork_logo.png"
+                alt="Online CoWork Logo"
+              />
+            </div>
+          </header>
+        </section>
+        <!-- Typing Tasks -->
+        <section>
+        </section>
+        <section class="why">
+        <h2>Why am I doing this?</h2>
+          <input
+            id="why"
+            type="text"
+            name="why"
+            placeholder="e.g. To have more time with my family"
+            maxlength='45'
+          />
+          </section>
+        <!-- Daily To-Do list -->
+        <div class="daily-todo">
+          <!-- <section>
+            <header>
+              <div class="flex center">
+                <img
+                  class="logo"
+                  src="./assets/online_cowork_logo.png"
+                  alt="Online CoWork Logo"
+                />
+              </div>
+            </header>
+          </section> -->
+          <!-- <h1> Daily Planner</h1>
+          <div class="flex small-input flex align-center justify-start">
+            <div>
+              <h2>What is my most important task?</h2>
+              <input
+                id="task"
+                type="text"
+                name="task"
+                placeholder="e.g. Email Jane"
+                maxlength='20'
+              />
+            </div>
+          <div class="time">
+            <h2>How much time do I have today?</h2>
+            <input
+              id="task"
+              type="text"
+              name="task"
+              placeholder="e.g. 1hr 30 mins"
+              maxlength='20'
+            />
+        </div> -->
+        <!-- </div> -->
+          <h2 class="text-center">Today's 25-minute Tasks&nbsp;</h2>
+          <input
+            id="task"
+            type="text"
+            name="task"
+            class="task"
+            placeholder="Add each task that will take 25 minutes and push 'enter'"
+            maxlength='45'
+          />
+        <div>
+          <div class="timer-input justify-between">
+            <ul class="tasks">
+              <!-- <div class="task-list flex">
+                <div class="task-input ">
+                  <h5 class="text-left">Upload to my facebook page teice ok</h5>
+                </div>
+                <div class="time-i-need">
+                  <h5 class="text-center time">10<span class="mins">&nbsp;mins</span></h5>
+                </div>
+              </div>
+              <div class="flex button">
+                <button class="start">Start</button>
+                <button class="pause">Pause</button>
+                <button class="restart">Restart</button>
+              </div> -->
+            </ul>
+            <footer class="task-footer">
+              <span class="todo-count"><strong>1</strong> item left</span>
+              <ul class="filters">
+                <li>
+                    <a href="" class="selected all">All</a>
+                </li>
+                  <li>
+                    <a href="" class="active">Active</a>
+                </li>
+                <li>
+                  <a href="" class="completed">Completed</a>
+                </li>
+              </ul>
+              <a class="clear-completed none">Clear completed</a>
+            </footer>
+          </div>
+        </div>
+        <!-- Brain Dump -->
+        <section>
+          <div class="weekly-planner" style="margin-top: 2rem">
+            <h1>Brain Dump</h1>
+            <p style="color: white">Not sure what to do today? Get it all out on paper before creating your 25 minute tasks!</p>
+            <p>* You can make this box bigger by clicking and dragging the bottom right corner of the text area</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="43" rows="15"></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- Daily Journaling Exercise -->
+        <section>
+          <div class="weekly-planner">
+            <h1>My Daily Journal Exercise</h1>
+            <p style="color: white">Use this section to do a quick daily journal exercise. Write your thoughts, your worries, what might be holding you back from achieving your dreams, how you can overcome your obstacles, etc.<br>
+               If you prefer, you can ask yourself a question, such as 'What expectations do I have of myself today that are stressing me out?' - or click <a href="https://www.google.com/search?q=mindset+journal+prompts&oq=mindset+journal+prompts&aqs=chrome.0.0j0i22i30l5.3733j0j1&sourceid=chrome&ie=UTF-8" target="_blank">here</a> to get some ideas from Google for journaling prompts.</p>
+            <p>* You can make this box bigger by clicking and dragging the bottom right corner of the text area</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="43" rows="15"></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- Weekly Tasks -->
+        <section>
+          <div class="weekly-planner">
+            <h1>Weekly Planner</h1>
+            <p>* You can make this box bigger by clicking and dragging the bottom right corner of the text area</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="43" rows="15"></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- Monthly Tasks -->
+        <section>
+          <div class="weekly-planner">
+            <h1>Monthly Planner</h1>
+            <p>* You can make this box bigger by clicking and dragging the bottom right corner of the text area</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="43" rows="15"></textarea>
+            </div>
+          </div>
+        </section>
+        <!-- Brainstorming -->
+        <section>
+          <div class="weekly-planner">
+            <h1>Brainstorming Box</h1>
+            <p style="color: white">Need to figure something out? Use the space below to brainstorm, write a pros and cons list, etc!</p>
+            <p>* You can make this box bigger by clicking and dragging the bottom right corner of the text area</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="43" rows="15"></textarea>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- Sidebar Links -->
+        <aside>
+          <!-- Countdown Timer -->
+          <div class="countdown text-center">
+            <h1 class="text-center">My 25 minute POWER-sprint:</h1>
+            <input type="text" maxlength='23' placeholder="Make two Facebook Posts"/>
+                <ul class="flex justify-center">
+                  <li>
+                    <div class="start-button">
+                      <h5><span id="minutes">25</span>&nbsp;:&nbsp;<span id="seconds">00</span></h5>
+                      <h5 id="start-button">START</h5>
+                    </div>
+                  </li>
+                </ul>
+                <div class="reset-button flex justify-center">
+                  <h5 id="reset">RESET</h5>
+                </div>
+          </div>
+          <!-- Important Reminders -->
+          <div class="extra-notes reminders">
+            <h1>Today's Important Reminders!</h1>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="3"></textarea>
+            </div>
+          </div>
+          <!-- Self Care -->
+          <div class="extra-notes reminders">
+            <h1>Daily Self-Care</h1>
+            <p style="color: white">Write one thing that you will do to look after yourself today! Be sure to add it to your '25 minute' task list.</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="1"></textarea>
+            </div>
+          </div>
+          <!-- Connection -->
+          <div class="extra-notes reminders">
+            <h1>Daily Connection</h1>
+            <p style="color: white">Working online can be isolating! Write one thing that you will do to connect with others today. Be sure to add it to your '25 minute' task list.</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="1"></textarea>
+            </div>
+          </div>
+          <!-- Daily Health -->
+          <div class="extra-notes reminders">
+            <h1>Daily Health</h1>
+            <p style="color: white">Write one thing that you will do to look after your health today. Be sure to add it to your '25 minute' task list.</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="1"></textarea>
+            </div>
+          </div>
+          <!-- Gratitude -->
+          <div class="extra-notes reminders">
+            <h1>Daily Gratitude</h1>
+            <p style="color: white">What are you grateful for today?</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="4"></textarea>
+            </div>
+          </div>
+          <!-- Limiting Belief -->
+          <div class="extra-notes reminders">
+            <h1>Daily Limiting Beliefs</h1>
+            <p style="color: white">Write one belief about yourself, others or life that is holding you back today. What can you do to overcome this?</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="1"></textarea>
+            </div>
+            <!-- Income Goals-->
+          <div class="extra-notes reminders">
+            <h1>Daily Income Reflection</h1>
+            <p style="color: white">What is your income goal this month? Write it below. Are you on track to achieve this? If not, write some ideas that you can implement from today to get back on track.</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="3"></textarea>
+            </div>
+          <!-- New Ideas -->
+          <div class="extra-notes reminders new-ideas">
+            <h1>New Ideas</h1>
+            <p style="color: white">Use this box to quickly make a note of any new ideas (such as new business ideas) that pop into your head</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="26" rows="3"></textarea>
+            </div>
+          </div>
+          <!-- Extra Notes -->
+          <div class="extra-notes">
+            <h1>Extra Notes</h1>
+            <p>* You can make this box bigger by clicking and dragging the bottom right corner of the text area</p>
+            <div class="flex center">
+              <textarea name="" id="" cols="25" rows="8"></textarea>
+            </div>
+          </div>
+          <ul class="extra-links flex center column"></ul>
+        </aside>
+    </section>
+    <!-- Habit Tracker -->
+  <section class="container">
+    <div class="container habit-tracker">
+      <div class="flex habit-title">
+        <input type="text" placeholder="Type the month" class="flex-20" maxlength="9">
+        <h1 class="flex-80">My Daily Habit Tracker</h1>
+        <p class="clear">Clear</p>
+     </div>
+      <table>
+        <tr>
+          <th colspan="6"></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <th>11</th>
+          <th>12</th>
+          <th>13</th>
+          <th>14</th>
+          <th>15</th>
+          <th>16</th>
+          <th>17</th>
+          <th>18</th>
+          <th>19</th>
+          <th>20</th>
+          <th>21</th>
+          <th>22</th>
+          <th>23</th>
+          <th>24</th>
+          <th>25</th>
+          <th>26</th>
+          <th>27</th>
+          <th>28</th>
+          <th>29</th>
+          <th>30</th>
+          <th>31</th>
+        </tr>
+        <tr>
+          <td class="border-none habit" colspan="6"><input type="text" placeholder="e.g. Drink more water" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class='habit border-none' colspan="6"><input type="text"placeholder="One Instagram Post" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Clear Inbox" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Yoga 30 mins" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Read 1 chapter" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Mindset journaling" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Self-Care" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="One Pinterest Pin" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Listen to a podcast" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Reply to all comments" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="habit border-none" colspan="6"><input type="text" placeholder="Find one influencer" maxlength="20"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td class="border-none"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    </section>
+    <!-- Google Calendar -->
+    <section class="container">
+      <div class="google-calendar">
+        <div class="flex justify-between">
+          <a class="notifications">Get Reminders</a>
+          <div>
+            <h1 class="flex-80">The Online CoWork Calendar</h1>
+          </div>
+          <a href="https://onlinecowork.com" target="_blank" rel="noopener noreferrer" class="add-your-event">Add Your Event</a>
+      </div>
+      <h6>Join online events hosted by your fellow 'Online CoWorkers'! <br>Or add your own 😍. These events include: workshops, scheduled Facebook or Instagram livestreams, <br> virtual summits, group programs, challenges, masterminds, yoga and other fitness classes, art classes and more!</h6>
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FToronto&amp;src=aGh1dW81NHBpaTE2N21jMDFwb2M0YzB0OGNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=NHNiaW0wMmYwMW9uamZkODZwaWFjM2RyajZ0N2piaTNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23c23c5b&amp;color=%237CB342&amp;mode=AGENDA" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </section>
+    <section>
+      <footer class="end-footer">
+        <h4 class="text-center">Made with ♥ by Hayley</h4>
+        <div class="flex center">
+          <p>&#169;&nbsp;Online CoWork 2021</p>
+          <p>|</p>
+          <a href="https://onlinecowork.com/terms-and-conditions">Terms and Conditions</a>
+          <p>|</p>
+          <a href="https://onlinecowork.com/privacy-policy">Privacy Policy</a>
+          <p>|</p>
+          <p>onlinecowork @ gmail.com</p>
+        </div>
+      </footer>
+    </section>
+    <script src="./data.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
+
